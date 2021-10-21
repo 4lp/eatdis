@@ -4,8 +4,7 @@ const fs = require('fs')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
-  fs.readFile('index.html', 'utf-8', (err, content) => {
+  fs.readFile('./dist/index.html', 'utf-8', (err, content) => {
     if (err) {
       console.log('We cannot open "index.html" file.')
     }
