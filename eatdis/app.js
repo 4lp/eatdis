@@ -16,7 +16,9 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "dist")));
+app.use(
+  express.static(__dirname + "/dist/", { etag: false, lastModified: false })
+);
 
 app.use("/eatdis", indexRouter);
 
